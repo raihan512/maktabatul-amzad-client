@@ -3,7 +3,6 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 export default function Input({ type, placeholder, name }) {
   const [showPass, setShowPass] = useState(false);
-  console.log(type);
 
   //   If type is submit then
   if (type === "submit") {

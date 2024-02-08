@@ -6,7 +6,7 @@ export default {
       center: true,
       padding: {
         DEFAULT: "5px",
-        sm: "0rem",
+        // lg: "0rem",
       },
     },
   },
