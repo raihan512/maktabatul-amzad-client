@@ -4,6 +4,7 @@ import MainLayout from "../Layout/MainLayout/MainLayout";
 import SignIn from "../Pages/Auth/SignIn/SignIn";
 import SignUp from "../Pages/Auth/SignUp/SignUp";
 import ResetPassword from "../Pages/Auth/ResetPassword/ResetPassword";
+import BooksPage from "../Pages/BooksPage/BooksPage/BooksPage";
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ export const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "books",
+        element: <BooksPage />,
       },
     ],
   },
