@@ -12,7 +12,7 @@ export default function HeaderTopLanguage() {
   });
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       <button
         className="flex items-center"
         ref={languageMenuRef}
@@ -23,15 +23,15 @@ export default function HeaderTopLanguage() {
       {/* Select Language */}
       {changeLang && (
         <div>
-          <ul className="absolute bg-white rounded-sm overflow-hidden border">
+          <ul className="absolute bg-white rounded-sm overflow-hidden border py-2">
             <li className="py-2 pl-5 pr-12 cursor-pointer hover:bg-gray-100 text-gray-900 font-medium">
-              BANGLA
+              Bangla
             </li>
             <li className="py-2 pl-5 pr-12 cursor-pointer hover:bg-gray-100 text-gray-900 font-medium">
-              ENGLISH
+              English
             </li>
             <li className="py-2 pl-5 pr-12 cursor-pointer hover:bg-gray-100 text-gray-900 font-medium">
-              ARABIC
+              Arabic
             </li>
           </ul>
         </div>

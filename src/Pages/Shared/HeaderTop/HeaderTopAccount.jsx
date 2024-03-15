@@ -25,7 +25,7 @@ export default function HeaderTopAccount() {
       </button>
       {/* Profile */}
       {accountOpen && (
-        <div className="absolute w-[200px] -left-32">
+        <div className="absolute w-[200px] -left-32 z-50">
           <div className="bg-white rounded-sm overflow-hidden border pt-2">
             <ul>
               <li className="p-2 hover:bg-gray-100">
@@ -61,9 +61,7 @@ export default function HeaderTopAccount() {
                     />
                   </div>
                   <div className="w-7/12 truncate">
-                    <Link className="text-gray-900 font-bold">
-                      Borhan Ashrafi
-                    </Link>
+                    <p className="text-gray-900 font-bold">Borhan Ashrafi</p>
                     {/* <p className="text-gray-900">User</p> */}
                   </div>
                 </Link>
