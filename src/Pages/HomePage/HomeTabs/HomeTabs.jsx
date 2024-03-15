@@ -1,10 +1,14 @@
 import { useRef, useState } from "react";
 import Slider from "react-slick";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import useBooks from "../../../hooks/useBooks";
+import BookCard from "../../Shared/BookCard/BookCard";
 
 export default function HomeTabs() {
   const [activeTab, setActiveTab] = useState("tab-1");
   const sliderBtns = useRef(null);
+
+  const [books] = useBooks();
 
   var settings = {
     dots: false,
@@ -63,7 +67,9 @@ export default function HomeTabs() {
             <button
               onClick={() => setActiveTab("tab-1")}
               className={`${
-                activeTab === "tab-1" ? "border-b-2 text-[#F0141E]" : "no"
+                activeTab === "tab-1"
+                  ? "border-[#F0141E] border-b-2 text-[#F0141E]"
+                  : ""
               } text-xs sm:text-sm md:text-base font-semibold pb-2 -mb-[10px] border-black mr-2.5 md:mr-4 uppercase`}
             >
               New Books
@@ -71,7 +77,9 @@ export default function HomeTabs() {
             <button
               onClick={() => setActiveTab("tab-2")}
               className={`${
-                activeTab === "tab-2" ? "border-b-2 text-[#F0141E]" : "no"
+                activeTab === "tab-2"
+                  ? "border-[#F0141E] border-b-2 text-[#F0141E]"
+                  : ""
               } text-xs sm:text-sm md:text-base font-semibold pb-2 -mb-[10px] border-black mr-2.5 md:mr-4 uppercase`}
             >
               Best Seller
@@ -79,7 +87,9 @@ export default function HomeTabs() {
             <button
               onClick={() => setActiveTab("tab-3")}
               className={`${
-                activeTab === "tab-3" ? "border-b-2 text-[#F0141E]" : "no"
+                activeTab === "tab-3"
+                  ? "border-[#F0141E] border-b-2 text-[#F0141E]"
+                  : ""
               } text-xs sm:text-sm md:text-base font-semibold pb-2 -mb-[10px] border-black uppercase`}
             >
               Comming Soon
@@ -91,21 +101,27 @@ export default function HomeTabs() {
             {activeTab === "tab-1" && (
               <div className="my-8">
                 <Slider ref={sliderBtns} {...settings}>
-                  <p>All Books</p>
+                  {books.map((book) => (
+                    <BookCard key={book._id} book={book} />
+                  ))}
                 </Slider>
               </div>
             )}
             {activeTab === "tab-2" && (
               <div className="my-8">
                 <Slider ref={sliderBtns} {...settings}>
-                  <p>New Books</p>
+                  {books.map((book) => (
+                    <BookCard key={book._id} book={book} />
+                  ))}
                 </Slider>
               </div>
             )}
             {activeTab === "tab-3" && (
               <div className="my-8">
                 <Slider ref={sliderBtns} {...settings}>
-                  <p>Upcoming Books</p>
+                  {books.map((book) => (
+                    <BookCard key={book._id} book={book} />
+                  ))}
                 </Slider>
               </div>
             )}
@@ -113,13 +129,13 @@ export default function HomeTabs() {
             <div className="absolute bottom-8 w-full flex justify-end">
               <button
                 onClick={() => sliderBtns.current.slickPrev()}
-                className="p-1 ml-2 bg-gray hover:bg-[#F0141E]"
+                className="p-1 ml-2 bg-gray-400 hover:bg-[#F0141E]"
               >
                 <IoIosArrowBack className="text-white text-base hover:text-black" />
               </button>
               <button
                 onClick={() => sliderBtns.current.slickNext()}
-                className="p-1 ml-2 bg-gray hover:bg-[#F0141E]"
+                className="p-1 ml-2 bg-gray-400 hover:bg-[#F0141E]"
               >
                 <IoIosArrowForward className="text-white text-base hover:text-black" />
               </button>

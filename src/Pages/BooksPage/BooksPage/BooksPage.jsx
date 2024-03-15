@@ -1,7 +1,6 @@
 import React from "react";
 import useBooks from "../../../hooks/useBooks";
 import BookCard from "../../Shared/BookCard/BookCard";
-import { Link } from "react-router-dom";
 
 export default function BooksPage() {
   const [books] = useBooks();
@@ -30,8 +29,8 @@ export default function BooksPage() {
       </div>
       <div className="grid grid-cols-12">
         {/* Books Container */}
-        <div className="col-span-10">
-          <div className="grid grid-cols-7 gap-5">
+        <div className="col-span-9">
+          <div className="grid grid-cols-6 gap-5">
             {books.map((book) => (
               <BookCard key={book._id} book={book} />
             ))}
