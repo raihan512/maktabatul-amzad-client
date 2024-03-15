@@ -1,18 +1,15 @@
-import React from "react";
-import Banner from "./Banner";
-import Highlight from "./Highlight";
+import {} from "./HomeBanner";
+
+import BannerSlider from "./BannerSlider/BannerSlider";
+import Highlight from "./Highlight/Highlight";
 
 export default function HomeBanner() {
   return (
-    <div className="container">
-      <div className="flex justify-between space-x-20">
-        <div className="w-8/12 overflow-hidden">
-          <Banner />
-        </div>
-        <div className="4/12">
-          <Highlight />
-        </div>
+    <section className="container my-10">
+      <div className="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-6 xl:grid-cols-4 gap-y-5 gap-8 lg:gap-x-20">
+        <BannerSlider />
+        <Highlight />
       </div>
-    </div>
+    </section>
   );
 }
