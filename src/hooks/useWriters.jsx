@@ -4,12 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function useWriters() {
   const axiosPublic = useAxiosPublic();
-  const { data: writers = [] } = useQuery({
+  const { data: writers = [], isLoading } = useQuery({
     queryKey: ["writers"],
     queryFn: async () => {
       const res = await axiosPublic.get("/writers");
       return res.data;
     },
   });
-  return [writers];
+  return [writers, isLoading];
 }
